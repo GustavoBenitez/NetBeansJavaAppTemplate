@@ -1,4 +1,4 @@
-/*
+/* 
  * Copyright 2017 José A. Pacheco Ondoño - joanpaon@gmail.com.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +25,7 @@ import org.japo.java.forms.GUI;
  */
 public class MMEM implements MouseMotionListener {
 
-    // Referencia al Interfaz
+    // Referencia al GUI
     private final GUI gui;
 
     // Constructor
@@ -35,12 +35,11 @@ public class MMEM implements MouseMotionListener {
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        // gui.procesarArrastreRaton(e);
+
     }
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        // gui.procesarMovimientoRaton(e);
-    }
 
+    }
 }

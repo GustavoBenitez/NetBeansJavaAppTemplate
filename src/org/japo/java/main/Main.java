@@ -15,23 +15,32 @@
  */
 package org.japo.java.main;
 
-import org.japo.java.app.App;
+import java.util.Properties;
+import javax.swing.SwingUtilities;
+import org.japo.java.forms.GUI;
+import org.japo.java.libraries.UtilesApp;
 
 /**
  *
  * @author José A. Pacheco Ondoño - joanpaon@gmail.com
- *
- * Arranque e inicialización de la aplicación
  */
 public class Main {
 
-    // Punto de entrada a la aplicación
+    // Fichero Propiedades App
+    public static final String RECURSO_PROPIEDADES = "properties/app.properties";
+
+    // Entrada a la Aplicación
     public static void main(String[] args) {
-        // Crear aplicación
-        App app = new App();
-
-        // Lanzar aplicación
-        app.launchApp();
+        // Lanzar GUI
+        SwingUtilities.invokeLater(() -> {
+            // Cargar Propiedades App
+            Properties prp = UtilesApp.importarPropiedadesRecurso(RECURSO_PROPIEDADES);
+            
+            // Instanciar GUI
+            GUI gui = new GUI(prp);
+            
+            // Mostrar GUI
+            gui.setVisible(true);
+        });
     }
-
 }
